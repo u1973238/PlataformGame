@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class AttackState : State
 {
+    public ChaseState Chase;
     public override State RunCurrentState()
     {
-        Debug.Log("I have attacked");
-        return this;
+        
+        return Chase;
     }
 }
