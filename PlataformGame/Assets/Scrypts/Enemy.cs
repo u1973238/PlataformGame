@@ -27,4 +27,12 @@ public class Enemy : MonoBehaviour
             isFlipped = true;
         }
     }
+
+    public void Flip()
+    {
+        Vector3 flipped = Body.transform.localScale;
+        flipped.z *= -1f;
+        Body.transform.localScale = flipped;
+        Body.transform.Rotate(0f, 180f, 0f);
+    }
 }
