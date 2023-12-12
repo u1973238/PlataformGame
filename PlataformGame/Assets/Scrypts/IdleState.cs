@@ -9,8 +9,9 @@ public class IdleState : State
     public Enemy Body;
     GameObject Point;
     public ChaseState Chase;
+
     bool canSeePLAYER;
-    public float speed = 2.5f;
+    public float speed = 1f;
     private float distance;
 
     private bool dir=true;

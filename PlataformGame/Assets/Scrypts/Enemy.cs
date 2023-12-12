@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     public Transform player;
     public GameObject Body;
 
+    public Animator animator;
+
     public bool isFlipped = false;
 
     public void LookAtPlayer()
@@ -34,5 +36,10 @@ public class Enemy : MonoBehaviour
         flipped.z *= -1f;
         Body.transform.localScale = flipped;
         Body.transform.Rotate(0f, 180f, 0f);
+    }
+
+    public void SetAtack(bool i)
+    {
+        animator.SetBool("AttackRange", i);
     }
 }
