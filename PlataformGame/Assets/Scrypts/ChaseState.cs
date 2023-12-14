@@ -9,10 +9,10 @@ public class ChaseState : State
     public Enemy Body;
     public AttackState Attack;
     bool isInAttackRange;
-    public Animator animator;
+    //public Animator animator;
 
     public float speed = 2.5f;
-    public float attackRange = 3.5f;
+     float attackRange = 3.5f;
 
     public GameObject player;
     private float distance;
@@ -40,7 +40,7 @@ public class ChaseState : State
             float newX = Mathf.MoveTowards(Body.transform.position.x, player.transform.position.x, speed * Time.deltaTime);
             Body.transform.position = new Vector2(newX, Body.transform.position.y);
 
-            if (Vector2.Distance(Body.transform.position, player.transform.position) < attackRange)
+            if (Body.transform.position.x - player.transform.position.x < attackRange)
             {
                 isInAttackRange = true;
             }
