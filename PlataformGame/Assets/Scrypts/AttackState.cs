@@ -7,7 +7,7 @@ public class AttackState : State
     public Enemy Body;
     public GameObject player;
     public ChaseState Chase;
-    public float cooldownTime = 1f, nextCooldown;
+    private float cooldownTime = 1f, nextCooldown;
 
     public bool HasAttacked = false;
     public override State RunCurrentState()
