@@ -12,9 +12,7 @@ public class ChaseState : State
     //public Animator animator;
 
     public float speed = 2.5f;
-     float attackRange = 3.5f;
-
-    public GameObject player;
+    float attackRange = 3.5f;
     private float distance;
 
     public override State RunCurrentState()
@@ -35,12 +33,12 @@ public class ChaseState : State
             Body.transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
             */
 
-            float directionX = Mathf.Sign(player.transform.position.x - Body.transform.position.x);
+            float directionX = Mathf.Sign(Body.player.position.x - Body.transform.position.x);
 
-            float newX = Mathf.MoveTowards(Body.transform.position.x, player.transform.position.x, speed * Time.deltaTime);
+            float newX = Mathf.MoveTowards(Body.transform.position.x, Body.player.position.x, speed * Time.deltaTime);
             Body.transform.position = new Vector2(newX, Body.transform.position.y);
 
-            if (Body.transform.position.x - player.transform.position.x < attackRange)
+            if (Body.transform.position.x - Body.player.position.x < attackRange)
             {
                 isInAttackRange = true;
             }

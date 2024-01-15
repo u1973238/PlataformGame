@@ -5,16 +5,15 @@ using UnityEngine;
 
 public class IdleState : State
 {
-    public GameObject pointA,pointB,player;
+    //public GameObject pointA,pointB,player;
     public Enemy Body;
-    GameObject Point;
+    Transform Point;
     public ChaseState Chase;
 
     bool canSeePLAYER;
     public float speed = 1f;
     private float distance;
-
-    private bool dir=true;
+    private bool dir=false;
     public override State RunCurrentState()
     {
         if(canSeePLAYER)
@@ -25,8 +24,8 @@ public class IdleState : State
         {
             if (dir)
             {
-                Point = pointA;
-                if(Mathf.Abs(Body.transform.position.x - pointA.transform.position.x) < 0.01f)
+                Point = Body.pointA;
+                if(Mathf.Abs(Body.transform.position.x - Body.pointA.position.x) < 0.01f)
                 {
                     dir = false;
                     Body.Flip();
@@ -34,15 +33,15 @@ public class IdleState : State
             }
             else
             {
-                Point = pointB;
-                if (Mathf.Abs(Body.transform.position.x - pointB.transform.position.x) < 0.01f)
+                Point = Body.pointB;
+                if (Mathf.Abs(Body.transform.position.x - Body.pointB.position.x) < 0.01f)
                 {
                     dir = true;
                     Body.Flip();
                 }
             }
 
-            if(Vector2.Distance(Body.transform.position, player.transform.position) < 4f)
+            if(Vector2.Distance(Body.transform.position, Body.player.position) < 4f)
             {
                 canSeePLAYER=true;
             }
@@ -56,10 +55,10 @@ public class IdleState : State
 
             //Move enemy in plane
             // Calculate the direction along the x-axis from Body to Point
-            float directionX = Mathf.Sign(Point.transform.position.x - Body.transform.position.x);
+            float directionX = Mathf.Sign(Point.position.x - Body.transform.position.x);
 
             // Move the Body towards the Point along the x-axis
-            float newX = Mathf.MoveTowards(Body.transform.position.x, Point.transform.position.x, speed * Time.deltaTime);
+            float newX = Mathf.MoveTowards(Body.transform.position.x, Point.position.x, speed * Time.deltaTime);
             Body.transform.position = new Vector2(newX, Body.transform.position.y);
 
             return this;

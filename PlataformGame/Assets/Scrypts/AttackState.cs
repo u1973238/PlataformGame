@@ -5,11 +5,9 @@ using UnityEngine;
 public class AttackState : State
 {
     public Enemy Body;
-    public GameObject player;
     public ChaseState Chase;
     private float cooldownTime = 1f, nextCooldown;
-
-    public bool HasAttacked = false;
+    private bool HasAttacked = false;
     public override State RunCurrentState()
     {
         if (!HasAttacked)

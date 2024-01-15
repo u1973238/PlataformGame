@@ -44,9 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fa81c2e3ae63264a967a462c7f04b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointA: {fileID: 0}
-  pointB: {fileID: 0}
-  player: {fileID: 0}
   Body: {fileID: 1040614241493398246}
   Chase: {fileID: 3215415227071011183}
   speed: 2.5
@@ -79,14 +76,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2635636618141301903}
   serializedVersion: 2
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 6.64, y: -3.0765, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 7.6785655, y: 9.317039, z: 0.3903518}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6981173239281775223}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1040614241493398246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  pointA: {fileID: 0}
+  pointB: {fileID: 0}
   Body: {fileID: 2635636618141301903}
   animator: {fileID: 3924812615686647108}
   isFlipped: 0
@@ -162,7 +161,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.011778705, y: -0.31999698}
+  m_Offset: {x: -0.05776137, y: 0.3166962}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.69696975, y: -0.45454547}
@@ -173,7 +172,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2111338, y: 0.3227207}
+  m_Size: {x: 0.350214, y: 0.32940906}
   m_EdgeRadius: 0
 --- !u!95 &3924812615686647108
 Animator:
@@ -239,8 +238,8 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -7984498411695716711, guid: 29e4bc8b772d6104fa1fda4140ba88f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
-  m_FlipY: 1
+  m_FlipX: 0
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.33, y: 0.33}
   m_AdaptiveModeThreshold: 0.5
@@ -293,11 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Body: {fileID: 1040614241493398246}
-  player: {fileID: 0}
   Chase: {fileID: 3215415227071011183}
-  cooldownTime: 1.2
-  nextCooldown: 0
-  HasAttacked: 0
 --- !u!1 &9116674817307389608
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +319,7 @@ Transform:
   m_GameObject: {fileID: 9116674817307389608}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.063, y: -0.3127, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -392,7 +387,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Body: {fileID: 1040614241493398246}
   Attack: {fileID: 1799705734335848837}
-  animator: {fileID: 0}
   speed: 2.5
-  attackRange: 3
-  player: {fileID: 0}
